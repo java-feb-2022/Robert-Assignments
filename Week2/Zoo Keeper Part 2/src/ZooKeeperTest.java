@@ -1,3 +1,5 @@
+import com.zookeeper.Bat;
+import com.zookeeper.Gorilla;
 
 public class ZooKeeperTest {
 
@@ -16,5 +18,22 @@ public class ZooKeeperTest {
 		gorilla.displayEnergy();
 		gorilla.climb();
 		gorilla.displayEnergy();
+		
+//		ZooKeeper Assignment Part 2
+		Bat bat = new Bat();
+		bat.attackTown();
+		bat.displayEnergy();
+		bat.attackTown();
+		bat.displayEnergy();
+		bat.attackTown();
+		bat.displayEnergy();
+		bat.eatHumans();
+		bat.displayEnergy();
+		bat.eatHumans();
+		bat.displayEnergy();
+		bat.fly();
+		bat.displayEnergy();
+		bat.fly();
+		bat.displayEnergy();
 	}
 }

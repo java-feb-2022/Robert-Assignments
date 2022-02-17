@@ -1,3 +1,6 @@
+package com.zookeeper;
+
+
 
 public class Mammal {
 //	Variables with their strict Getters and Setters

@@ -8,12 +8,12 @@
 		<version>2.6.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.daikichi</groupId>
-	<artifactId>DaikichiPathVariables</artifactId>
+	<groupId>com.hopperReciept</groupId>
+	<artifactId>HopperReceipt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>DaikichiPathVariables</name>
-	<description>Using PathVariables to intereact with user</description>
+	<name>HopperReceipt</name>
+	<description>Passing data to jsp files from backend</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

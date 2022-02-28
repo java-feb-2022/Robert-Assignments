@@ -12,7 +12,8 @@ import com.codingdojo.booksAPI.repositories.BookRepository;
 public class BookService {
 	private final BookRepository bookRepo;
 	
-	public BookService(BookRepository bookRepository) { bookRepo = bookRepository; }
+	
+	public BookService(BookRepository bookRepository) { this.bookRepo = bookRepository; }
 	
 	public List<Book> allBooks() { return bookRepo.findAll(); }
 	

@@ -26,7 +26,7 @@
             <!-- For Each Loop Here -->
 			<c:forEach var="item" items="${exp}">
 				<tr>
-                	<td><c:out value="${item.name}"/></td>
+                	<td><a href="/details/<c:out value="${item.id}"/>"><c:out value="${item.name}"/></a></td>
                 	<td><c:out value="${item.vendor}"/></td>
                 	<td>$<c:out value="${item.amount}"/></td>
                 	<td><c:out value="${item.description}"/></td>

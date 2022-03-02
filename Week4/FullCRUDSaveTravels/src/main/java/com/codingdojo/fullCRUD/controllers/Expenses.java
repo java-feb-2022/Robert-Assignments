@@ -44,6 +44,12 @@ public class Expenses {
 		}
 	}
 	
+	@GetMapping("/details/{id}")
+	public String showExpense(@PathVariable long id, Model model) {
+		model.addAttribute("expense", expServ.getExpenseById(id));
+		return "expenseDetail.jsp";
+	}
+	
 	@GetMapping("/edit/{id}")
 	public String editExpense(@PathVariable("id") Long id, Model model) {
 		Expense exp = expServ.getExpenseById(id);

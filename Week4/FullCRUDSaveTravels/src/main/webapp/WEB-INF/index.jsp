@@ -30,7 +30,8 @@
                 	<td><c:out value="${item.vendor}"/></td>
                 	<td>$<c:out value="${item.amount}"/></td>
                 	<td><c:out value="${item.description}"/></td>
-                	<td><a href="/edit/<c:out value="${item.id}"/>">edit</a></td>
+                	<td><a href="/edit/<c:out value="${item.id}"/>">edit</a>
+                	<form:form action="delete/${item.id}" method="delete"><input class="btn btn-danger" type="submit" value="Delete"></form:form></td>
             	</tr>
 			</c:forEach>
         </tbody>

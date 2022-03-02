@@ -20,8 +20,12 @@ public class ExpenseService {
 		return expRepo.findAll();
 	}
 	
-	public Expense createExpense(Expense saveExp) {
-		return expRepo.save(saveExp);
+	public Expense createExpense(Expense expense) {
+		return expRepo.save(expense);
+	}
+	
+	public Expense editExpense(Expense expense) {
+		return expRepo.save(expense);
 	}
 	
 	public Expense getExpenseById(long id) {

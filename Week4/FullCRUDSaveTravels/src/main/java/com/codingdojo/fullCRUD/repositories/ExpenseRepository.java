@@ -10,4 +10,5 @@ import com.codingdojo.fullCRUD.models.Expense;
 @Repository
 public interface ExpenseRepository extends CrudRepository<Expense, Long> {
 	List<Expense> findAll();
+	
 }

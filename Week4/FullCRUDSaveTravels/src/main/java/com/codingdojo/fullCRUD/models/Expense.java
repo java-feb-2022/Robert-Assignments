@@ -23,6 +23,7 @@ public class Expense {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	public long getId() { return id; }
+	public void setId(long id) { this.id = id; }
 	
 	@NotNull
 	@Size(min = 1, message = "Name must not be empty.")
@@ -44,7 +45,7 @@ public class Expense {
 	
 	@NotNull
 	@Size(min = 1, message = "Please provide brief description.")
-	private String description;
+	public String description;
 	public String getDescription() { return description; }
 	public void setDescription(String description) { this.description = description; }
 	

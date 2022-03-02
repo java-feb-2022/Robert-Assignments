@@ -7,8 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.codingdojo.fullCRUD.models.Expense;
 import com.codingdojo.fullCRUD.services.ExpenseService;
@@ -36,6 +39,33 @@ public class Expenses {
 		}
 		else {
 			expServ.createExpense(expense);
+			return "redirect:/";
+		}
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editExpense(@PathVariable("id") Long id, Model model) {
+		Expense exp = expServ.getExpenseById(id);
+		model.addAttribute("expense", exp);
+		System.out.println("MOdel: " + model.getAttribute("expense"));
+		if(model.getAttribute("expense") != null) {
+			return "editExpense.jsp";
+		}
+		else {
+			return "redirect:/";
+		}
+	}
+	
+	@PutMapping("/edit/{id}/commit")
+	public String commitEdit(@Valid @ModelAttribute("expense") Expense expense,
+			BindingResult result, @PathVariable Long id, Model model) {
+		if(result.hasErrors()) {
+			model.addAttribute(expense);
+			return "editExpense.jsp";
+		}
+		else {
+			System.out.println("EXPENSE ID: " + expense.getId());
+			expServ.editExpense(expense);
 			return "redirect:/";
 		}
 	}

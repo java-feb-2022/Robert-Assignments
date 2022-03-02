@@ -18,6 +18,8 @@
                 <th>Expense</th>
                 <th>Vendor</th>
                 <th>Amount</th>
+                <th>Description</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,6 +29,8 @@
                 	<td><c:out value="${item.name}"/></td>
                 	<td><c:out value="${item.vendor}"/></td>
                 	<td>$<c:out value="${item.amount}"/></td>
+                	<td><c:out value="${item.description}"/></td>
+                	<td><a href="/edit/<c:out value="${item.id}"/>">edit</a></td>
             	</tr>
 			</c:forEach>
         </tbody>
